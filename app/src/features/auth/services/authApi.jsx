@@ -8,5 +8,8 @@ const api = axios.create({
         : "http://localhost:3000/"
 })
 
+console.log('API URL:', import.meta.env.VITE_API_URL)
+console.log('IS PROD:', import.meta.env.PROD)
+
 export const registerUser = (data) => api.post('/api/auth/registro', data);
 export const loginUser = (data) => api.post('/api/auth/login', data);
