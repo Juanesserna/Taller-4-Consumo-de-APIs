@@ -24,7 +24,7 @@ export const useGastos = () => {
     const obtenerGastos = async () => {
         setCargando(true)
         try {
-            const response = await axios.get('http://localhost:3000/api/gastos', config)
+            const response = await axios.get(`${import.meta.env.VITE_API_URL}api/gastos`, config)
             setGastos(response.data)
         } catch (error) {
             setMensaje({ texto: 'Error al cargar gastos', tipo: 'error' })
@@ -41,7 +41,7 @@ export const useGastos = () => {
         }
 
         try {
-            await axios.post('http://localhost:3000/api/gastos', form, config)
+            await axios.post(`${import.meta.env.VITE_API_URL}api/gastos`, form, config)
             setMensaje({ texto: 'Gasto registrado exitosamente', tipo: 'exito' })
             setForm({
                 descripcion: '',
@@ -58,7 +58,7 @@ export const useGastos = () => {
     // eliminar gasto
     const eliminarGasto = async (id) => {
         try {
-            await axios.delete(`http://localhost:3000/api/gastos/${id}`, config)
+            await axios.delete(`${import.meta.env.VITE_API_URL}api/gastos/${id}`, config)
             setMensaje({ texto: 'Gasto eliminado', tipo: 'exito' })
             obtenerGastos()  // Refresca la lista
         } catch (error) {

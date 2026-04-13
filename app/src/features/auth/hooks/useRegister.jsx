@@ -62,7 +62,7 @@ export const useRegister = () => {
         if (!validar()) return
 
         try {
-            const response = await axios.post('http://localhost:3000/api/auth/registro', {
+            const response = await axios.post(`${import.meta.env.VITE_API_URL}api/auth/registro`, {
                 nombre: form.nombre,
                 correo: form.correo,
                 contrasena: form.contrasena
