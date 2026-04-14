@@ -41,7 +41,7 @@ export const Content = () => {
                     Github
                 </Typography>
                 <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 480, mx: 'auto' }}>
-                    https://github.com/Juanesserna/Taller-4-React.git
+                    https://github.com/Juanesserna/Taller-4-Consumo-de-APIs
                 </Typography>
             </Box>
             <Divider />
